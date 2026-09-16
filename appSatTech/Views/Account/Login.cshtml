@@ -1,0 +1,51 @@
+﻿@model appSatTech.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Acesso ao Sistema";
+}
+
+<div class="row justify-content-center my-5">
+    <div class="col-md-5 col-lg-4">
+        <div class="card border-0 shadow-lg rounded-4">
+            <div class="card-body p-4 p-md-5">
+                <div class="text-center mb-4">
+                    <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-3">
+                        <i class="bi bi-person-lock fs-1"></i>
+                    </div>
+                    <h4 class="fw-bold">Área do Cliente</h4>
+                    <p class="text-muted small">Informe seu CPF para acessar</p>
+                </div>
+
+                <form asp-action="Login" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger p-2 small mb-3"></div>
+
+                    <div class="mb-4">
+                        <label asp-for="Cpf" class="form-label fw-semibold">CPF</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light text-muted"><i class="bi bi-card-text"></i></span>
+                            <input asp-for="Cpf" class="form-control form-control-lg fs-6" placeholder="000.000.000-00" />
+                        </div>
+                        <span asp-validation-for="Cpf" class="text-danger small"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100 rounded-3 shadow-sm fs-6">
+                        <i class="bi bi-box-arrow-in-right me-2"></i>Entrar
+                    </button>
+                </form>
+
+                <div class="text-center mt-4 pt-3 border-top">
+                    <p class="small text-muted mb-1">Ainda não possui cadastro?</p>
+                    <a asp-controller="Cliente" asp-action="Create" class="fw-semibold text-decoration-none">
+                        Cadastre-se aqui <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

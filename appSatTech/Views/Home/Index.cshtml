@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<div class="row align-items-center py-5 my-3 bg-white rounded-4 shadow-sm border p-4 p-md-5">
+    <div class="col-lg-7">
+        <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 rounded-pill mb-3">
+            <i class="bi bi-shield-check me-1"></i> Suporte Técnico Rápido
+        </span>
+        <h1 class="display-4 fw-bold text-dark mb-3">Soluções ágeis para os seus chamados</h1>
+        <p class="lead text-muted mb-4">
+            Gerencie atendimentos, acompanhe visitas técnicas e resolva demandas operacionais em uma só plataforma intuitiva.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+            <a asp-controller="Chamado" asp-action="Create" class="btn btn-primary btn-lg px-4 rounded-3 shadow-sm">
+                <i class="bi bi-plus-lg me-2"></i>Abrir Chamado
+            </a>
+            <a asp-controller="Chamado" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4 rounded-3">
+                <i class="bi bi-list-check me-2"></i>Meus Chamados
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-5 text-center mt-5 mt-lg-0">
+        <div class="p-4 bg-light rounded-circle d-inline-block shadow-sm">
+            <i class="bi bi-tools text-primary" style="font-size: 8rem;"></i>
+        </div>
+    </div>
+</div>

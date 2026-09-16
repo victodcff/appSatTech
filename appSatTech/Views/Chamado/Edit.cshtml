@@ -1,0 +1,62 @@
+﻿@model appSatTech.Models.Chamado
+
+@{
+    ViewData["Title"] = "Editar Chamado";
+}
+
+<div class="row justify-content-center my-4">
+    <div class="col-md-8 col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-bottom py-3">
+                <h4 class="fw-bold mb-0 text-dark"><i class="bi bi-pencil-square me-2 text-warning"></i>Editar Chamado #@Model.Codigo</h4>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger p-2 small mb-3"></div>
+                    <input type="hidden" asp-for="Codigo" />
+
+                    <div class="mb-3">
+                        <label asp-for="DataHora" class="form-label fw-semibold">Data e Hora</label>
+                        <input asp-for="DataHora" class="form-control" />
+                        <span asp-validation-for="DataHora" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="StatusAtendimento" class="form-label fw-semibold">Status do Atendimento</label>
+                        <select asp-for="StatusAtendimento" class="form-select">
+                            <option value="Agendada">Agendada</option>
+                            <option value="Realizada">Realizada</option>
+                            <option value="Cancelada">Cancelada</option>
+                        </select>
+                        <span asp-validation-for="StatusAtendimento" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ClienteId" class="form-label fw-semibold">Cliente</label>
+                        <select asp-for="ClienteId" class="form-select" asp-items="ViewBag.ClienteId"></select>
+                        <span asp-validation-for="ClienteId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="TecnicoId" class="form-label fw-semibold">Técnico Responsável</label>
+                        <select asp-for="TecnicoId" class="form-select" asp-items="ViewBag.TecnicoId"></select>
+                        <span asp-validation-for="TecnicoId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 pt-3 border-top">
+                        <a asp-action="Index" class="btn btn-light border px-4">Cancelar</a>
+                        <button type="submit" class="btn btn-primary px-4 shadow-sm">
+                            <i class="bi bi-save me-1"></i> Salvar Alterações
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
