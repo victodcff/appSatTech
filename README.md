@@ -17,17 +17,17 @@ O **appSatTech** é uma aplicação web desenvolvida em **ASP.NET Core MVC** pro
 ## 📸 Demonstração do Sistema
 
 ### 🔐 Tela de Login
-![Login](appSatTech/appSatTech/Imagens/Login.png)
+![Login](appSatTech/Imagens/Login.png)
 
 ---
 
 ### 🏠 Tela Principal (Logado)
-![Logado](appSatTech/appSatTech/Imagens/Logado.png)
+![Logado](appSatTech/Imagens/Logado.png)
 
 ---
 
 ### 📋 Central de Chamados (Listagem)
-![Lista](appSatTech/appSatTech/Imagens/Lista.png)
+![Lista](appSatTech/Imagens/Lista.png)
 
 ---
 
